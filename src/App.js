@@ -8,12 +8,14 @@ import ThemeToggle from './components/ThemeToggle';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+    <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
       <Navbar />
       <Header />
       <AboutMe />
       <Projects />
       <ScrollToTop />
+      <div className="flex-1 flex flex-col">
+      </div>
       <Footer />
       <ThemeToggle />
     </div>
