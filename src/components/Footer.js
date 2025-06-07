@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Footer() {
+const Footer = React.memo(function Footer() {
     return (
         <footer id="contact" className="bg-gray-100 dark:bg-gray-800 py-8 text-center mt-12">
             <div className="text-gray-700 dark:text-gray-300">
@@ -21,6 +21,6 @@ function Footer() {
             </div>
         </footer>
     );
-}
+});
 
 export default Footer;

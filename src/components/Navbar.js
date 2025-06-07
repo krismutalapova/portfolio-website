@@ -1,4 +1,6 @@
-function Navbar() {
+import React from 'react';
+
+const Navbar = React.memo(function Navbar() {
     return (
         <nav className="bg-gray-100 dark:bg-gray-800 shadow-md">
             <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
@@ -11,6 +13,6 @@ function Navbar() {
             </div>
         </nav>
     );
-}
+});
 
 export default Navbar;

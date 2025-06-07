@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-function ThemeToggle() {
+const ThemeToggle = React.memo(function ThemeToggle(props) {
     const [darkMode, setDarkMode] = useState(() => {
         const stored = localStorage.getItem('theme');
         return stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches);
@@ -27,6 +27,6 @@ function ThemeToggle() {
             {darkMode ? '☀️' : '🌙'}
         </button>
     );
-}
+});
 
 export default ThemeToggle;
