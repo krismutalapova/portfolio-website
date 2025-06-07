@@ -10,15 +10,16 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
       <Navbar />
-      <Header />
-      <AboutMe />
-      <Projects />
-      <ScrollToTop />
       <div className="flex-1 flex flex-col">
+        <Header />
+        <AboutMe />
+        <Projects />
+        <ScrollToTop />
       </div>
       <Footer />
       <ThemeToggle />
     </div>
   );
 }
+
 export default App;
