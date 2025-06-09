@@ -137,7 +137,19 @@ function Projects() {
                 <div className="grid md:grid-cols-3 gap-8">
                     {filteredProjects.map((project) => (
                         <article key={project.id} className="bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-                            <div className="relative w-full h-48 cursor-pointer" onClick={() => toggleDescription(project.id)}>
+                            <div
+                                className="relative w-full h-48 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                onClick={() => toggleDescription(project.id)}
+                                tabIndex={0}
+                                role="button"
+                                aria-expanded={expandedId === project.id}
+                                onKeyDown={e => {
+                                    if (e.key === 'Enter' || e.key === ' ') {
+                                        e.preventDefault();
+                                        toggleDescription(project.id);
+                                    }
+                                }}
+                            >
                                 <img
                                     src={project.image}
                                     alt={`Screenshot of "${project.title}" project`}
@@ -151,7 +163,7 @@ function Projects() {
                                 <h3 className="text-lg font-semibold">{project.title}</h3>
                                 <div className="mt-2 flex flex-wrap gap-2">
                                     {project.tags.map((tag, index) => (
-                                        <span key={index} className="text-xs bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-blue-100 px-2 py-1 rounded">
+                                        <span key={index} className="text-xs bg-blue-500 dark:bg-blue-700 text-white px-2 py-1 rounded">
                                             {tag}
                                         </span>
                                     ))}
