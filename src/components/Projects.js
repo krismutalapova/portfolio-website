@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import todoImage from '../assets/todo.png';
 import eruditioImage from '../assets/eruditio.png';
 import tappyImage from '../assets/tappy.png';
 import portfolioImage from '../assets/portfolio.png';
 import zooImage from '../assets/zoo.png';
+import Spinner from './Spinner';
 
 const projectData = [
     {
@@ -106,6 +107,12 @@ Tech stack:
 function Projects() {
     const [expandedId, setExpandedId] = useState(null);
     const [activeTag, setActiveTag] = useState('All');
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => setLoading(false), 1000);
+        return () => clearTimeout(timer);
+    }, []);
 
     const allTags = ['All', ...new Set(projectData.flatMap(p => p.tags))];
     const filteredProjects = activeTag === 'All' ? projectData : projectData.filter(p => p.tags.includes(activeTag));
@@ -113,6 +120,14 @@ function Projects() {
     const toggleDescription = (id) => {
         setExpandedId(expandedId === id ? null : id);
     };
+
+    if (loading) {
+        return (
+            <section id="projects" className="py-12 bg-white dark:bg-gray-900 min-h-[300px] flex items-center justify-center">
+                <Spinner />
+            </section>
+        );
+    }
 
     return (
         <section id="projects" className="py-12 bg-white dark:bg-gray-900">

@@ -14,9 +14,7 @@ const Footer = React.memo(function Footer() {
                         className="hover:text-blue-500" target="_blank" rel="noopener noreferrer">
                         LinkedIn
                     </a>
-                    <a href="kris.mutalapova@pm.me" className="hover:text-blue-500">
-                        Email
-                    </a>
+                    <a href="mailto:kris.mutalapova@pm.me" className="hover:text-blue-500">Email</a>
                 </div>
             </div>
         </footer>
