@@ -136,7 +136,7 @@ function Projects() {
 
                 <div className="grid md:grid-cols-3 gap-8">
                     {filteredProjects.map((project) => (
-                        <div key={project.id} className="bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+                        <article key={project.id} className="bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
                             <div className="relative w-full h-48 cursor-pointer" onClick={() => toggleDescription(project.id)}>
                                 <img
                                     src={project.image}
@@ -167,7 +167,7 @@ function Projects() {
                                     View Project
                                 </a>
                             </div>
-                        </div>
+                        </article>
                     ))}
                 </div>
             </div>
