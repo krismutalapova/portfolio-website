@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = React.memo(function Footer() {
     return (
-        <footer id="contact" className="bg-gray-100 dark:bg-gray-800 py-8 text-center mt-12">
+        <footer id="contact" className="bg-gray-100 dark:bg-gray-800 py-8 text-center mt-12" role="contentinfo">
             <div className="text-gray-700 dark:text-gray-300">
                 <p className="mb-2">© {new Date().getFullYear()} Kristina Mutalapova</p>
                 <div className="space-x-4">
