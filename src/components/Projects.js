@@ -140,7 +140,7 @@ function Projects() {
                             <div className="relative w-full h-48 cursor-pointer" onClick={() => toggleDescription(project.id)}>
                                 <img
                                     src={project.image}
-                                    alt={project.title}
+                                    alt={`Screenshot of "${project.title}" project`}
                                     className="w-full h-full object-cover"
                                 />
                                 <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 hover:opacity-100 flex items-center justify-center text-white text-sm transition-opacity">

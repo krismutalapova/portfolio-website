@@ -5,7 +5,7 @@ function Header() {
         <header className="text-center py-12">
             <img
                 src={profileImg}
-                alt="Profile"
+                alt="Kristina Mutalapova profile photo"
                 className="w-32 h-32 mx-auto rounded-full mb-4 shadow-lg object-cover"
             />
             <h1 className="text-3xl font-bold mb-2">Kristina Mutalapova</h1>
