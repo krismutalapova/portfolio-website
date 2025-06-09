@@ -8,10 +8,15 @@ Welcome to my personal portfolio! This site showcases my work, skills, and proje
 - **Contact**: Find my GitHub, LinkedIn, and email for networking or collaboration.
 - **Dark/Light Mode**: Toggle between light and dark themes.
 - **Scroll to Top**: Easily navigate back to the top of the page.
+- **Responsive Navbar**: Hamburger menu for easy navigation on mobile.
+- **404 Page**: Friendly error page for unknown routes.
+- **Loading Spinner**: Animated spinner while loading projects.
+- **Smooth Scrolling**: Seamless navigation between sections.
 
 ## 🛠️ Tech Stack
 - **Frontend**: React, Tailwind CSS
 - **State Management**: React Hooks (useState, useEffect)
+- **Routing**: React Router DOM
 - **Tooling**: Create React App, PostCSS, Autoprefixer
 
 ## 📁 Project Structure
@@ -47,12 +52,27 @@ my-portfolio/
    The optimized build will be in the `build/` folder.
 
 ## 📝 Code Overview
-- **App.js**: Main layout, imports all sections and utilities.
-- **components/Navbar.js**: Top navigation bar with anchor links.
+- **App.js**: Main layout, imports all sections and utilities, sets up routing and 404 page.
+- **components/Navbar.js**: Responsive navigation bar with hamburger menu and anchor links.
 - **components/Header.js**: Profile image, name, and tagline.
 - **components/AboutMe.js**: Short bio and background.
-- **components/Projects.js**: Interactive project cards with filtering and details.
+- **components/Projects.js**: Interactive project cards with filtering, details, and loading spinner.
 - **components/Footer.js**: Contact info and social links.
 - **components/ThemeToggle.js**: Light/dark mode toggle.
 - **components/ScrollToTop.js**: Floating button to scroll up.
+- **components/NotFound.js**: Custom 404 error page.
+- **components/Spinner.js**: Animated loading spinner.
 - **assets/**: Images for profile and projects.
+
+## 📦 Dependencies
+- react
+- react-dom
+- react-router-dom
+- tailwindcss
+- autoprefixer
+- postcss
+
+## ♿ Accessibility & UX
+- Keyboard navigation and skip link support
+- Accessible color contrast and focus styles
+- Smooth scrolling and responsive design
