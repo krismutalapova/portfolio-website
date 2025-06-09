@@ -119,7 +119,7 @@ function Projects() {
             <div className="max-w-6xl mx-auto px-6">
                 <h2 className="text-2xl font-bold text-center mb-6">Projects</h2>
 
-                <div className="flex justify-center mb-8 space-x-4">
+                <div className="flex flex-wrap justify-center mb-8 gap-2">
                     {allTags.map((tag) => (
                         <button
                             key={tag}
@@ -134,11 +134,11 @@ function Projects() {
                     ))}
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
                     {filteredProjects.map((project) => (
-                        <article key={project.id} className="bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+                        <article key={project.id} className="bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md overflow-hidden flex flex-col h-full">
                             <div
-                                className="relative w-full h-48 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                className="relative w-full h-48 sm:h-56 md:h-48 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 onClick={() => toggleDescription(project.id)}
                                 tabIndex={0}
                                 role="button"
@@ -159,23 +159,23 @@ function Projects() {
                                     {expandedId === project.id ? 'Click to hide details' : 'Click to view details'}
                                 </div>
                             </div>
-                            <div className="p-4">
-                                <h3 className="text-lg font-semibold">{project.title}</h3>
-                                <div className="mt-2 flex flex-wrap gap-2">
+                            <div className="p-4 flex-1 flex flex-col">
+                                <h3 className="text-base md:text-lg font-semibold">{project.title}</h3>
+                                <div className="mt-2 flex flex-wrap gap-2 overflow-x-hidden">
                                     {project.tags.map((tag, index) => (
-                                        <span key={index} className="text-xs bg-blue-500 dark:bg-blue-700 text-white px-2 py-1 rounded">
+                                        <span key={index} className="text-xs md:text-sm bg-blue-500 dark:bg-blue-700 text-white px-2 py-1 rounded whitespace-nowrap">
                                             {tag}
                                         </span>
                                     ))}
                                 </div>
                                 {expandedId === project.id && (
-                                    <div className="mt-2 text-gray-700 dark:text-gray-300 space-y-1">
+                                    <div className="mt-2 text-gray-700 dark:text-gray-300 space-y-1 text-sm md:text-base">
                                         {project.description.split('\n').map((line, idx) => (
                                             <p key={idx}>{line}</p>
                                         ))}
                                     </div>
                                 )}
-                                <a href={project.link} className="block mt-4 text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">
+                                <a href={project.link} className="block mt-4 text-blue-500 hover:underline text-sm md:text-base" target="_blank" rel="noopener noreferrer">
                                     View Project
                                 </a>
                             </div>
