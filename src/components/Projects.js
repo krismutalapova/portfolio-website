@@ -151,7 +151,7 @@ function Projects() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
                     {filteredProjects.map((project) => (
-                        <article key={project.id} className="bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md overflow-hidden flex flex-col h-full">
+                        <article key={project.id} className="bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md overflow-hidden flex flex-col h-full transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl group">
                             <div
                                 className="relative w-full h-48 sm:h-56 md:h-48 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 onClick={() => toggleDescription(project.id)}
@@ -168,15 +168,15 @@ function Projects() {
                                 <img
                                     src={project.image}
                                     alt={`Screenshot of "${project.title}" project`}
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover group-hover:brightness-75 transition"
                                 />
-                                <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 hover:opacity-100 flex items-center justify-center text-white text-sm transition-opacity">
+                                <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-sm transition-opacity">
                                     {expandedId === project.id ? 'Click to hide details' : 'Click to view details'}
                                 </div>
                             </div>
                             <div className="p-4 flex-1 flex flex-col">
-                                <h3 className="text-base md:text-lg font-semibold">{project.title}</h3>
-                                <div className="mt-2 flex flex-wrap gap-2 overflow-x-hidden">
+                                <h3 className="text-base md:text-lg font-semibold mb-1">{project.title}</h3>
+                                <div className="mt-1 flex flex-wrap gap-2 overflow-x-hidden">
                                     {project.tags.map((tag, index) => (
                                         <span key={index} className="text-xs md:text-sm bg-blue-500 dark:bg-blue-700 text-white px-2 py-1 rounded whitespace-nowrap">
                                             {tag}
@@ -190,9 +190,18 @@ function Projects() {
                                         ))}
                                     </div>
                                 )}
-                                <a href={project.link} className="block mt-4 text-blue-500 hover:underline text-sm md:text-base" target="_blank" rel="noopener noreferrer">
-                                    View Project
-                                </a>
+                                <div className="mt-4 flex gap-2">
+                                    {project.link && project.link !== '#' && (
+                                        <a href={project.link} className="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-xs md:text-sm font-medium" target="_blank" rel="noopener noreferrer">
+                                            View Project
+                                        </a>
+                                    )}
+                                    {project.live && (
+                                        <a href={project.live} className="px-3 py-1 bg-green-600 text-white rounded hover:bg-green-700 transition text-xs md:text-sm font-medium" target="_blank" rel="noopener noreferrer">
+                                            View Live
+                                        </a>
+                                    )}
+                                </div>
                             </div>
                         </article>
                     ))}
