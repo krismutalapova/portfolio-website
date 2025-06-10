@@ -1,10 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
+const sectionIds = ['about', 'projects', 'contact'];
 
 const Navbar = React.memo(function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState('about');
 
     const handleMenuToggle = () => setMenuOpen((open) => !open);
     const handleLinkClick = () => setMenuOpen(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollPos = window.scrollY + 80;
+            let current = 'about';
+            for (const id of sectionIds) {
+                const el = document.getElementById(id);
+                if (el && el.offsetTop <= scrollPos) {
+                    current = id;
+                }
+            }
+            setActiveSection(current);
+        };
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        handleScroll();
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const navLinks = [
+        { id: 'about', label: 'About' },
+        { id: 'projects', label: 'Projects' },
+        { id: 'contact', label: 'Contact' },
+    ];
 
     return (
         <nav className="bg-gray-100 dark:bg-gray-800 shadow-md" aria-label="Main navigation">
@@ -31,9 +57,17 @@ const Navbar = React.memo(function Navbar() {
                     ></span>
                 </button>
                 <ul className="hidden md:flex space-x-8 text-lg font-medium text-gray-700 dark:text-gray-300">
-                    <li><a href="#about" className="hover:text-blue-500 transition-colors duration-200" onClick={handleLinkClick}>About</a></li>
-                    <li><a href="#projects" className="hover:text-blue-500 transition-colors duration-200" onClick={handleLinkClick}>Projects</a></li>
-                    <li><a href="#contact" className="hover:text-blue-500 transition-colors duration-200" onClick={handleLinkClick}>Contact</a></li>
+                    {navLinks.map(link => (
+                        <li key={link.id}>
+                            <a
+                                href={`#${link.id}`}
+                                className={`hover:text-blue-500 transition-colors duration-200 ${activeSection === link.id ? 'text-blue-600 dark:text-blue-400 font-bold underline underline-offset-4' : ''}`}
+                                onClick={handleLinkClick}
+                            >
+                                {link.label}
+                            </a>
+                        </li>
+                    ))}
                 </ul>
             </div>
             {menuOpen && (
@@ -41,9 +75,17 @@ const Navbar = React.memo(function Navbar() {
                     id="navbar-menu"
                     className="md:hidden flex flex-col items-center bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 py-6 space-y-6 shadow-lg animate-fade-in z-50 transition-all duration-300 text-xl font-semibold rounded-b-xl"
                 >
-                    <li><a href="#about" className="hover:text-blue-500 transition-colors duration-200" onClick={handleLinkClick}>About</a></li>
-                    <li><a href="#projects" className="hover:text-blue-500 transition-colors duration-200" onClick={handleLinkClick}>Projects</a></li>
-                    <li><a href="#contact" className="hover:text-blue-500 transition-colors duration-200" onClick={handleLinkClick}>Contact</a></li>
+                    {navLinks.map(link => (
+                        <li key={link.id}>
+                            <a
+                                href={`#${link.id}`}
+                                className={`hover:text-blue-500 transition-colors duration-200 ${activeSection === link.id ? 'text-blue-600 dark:text-blue-400 font-bold underline underline-offset-4' : ''}`}
+                                onClick={handleLinkClick}
+                            >
+                                {link.label}
+                            </a>
+                        </li>
+                    ))}
                 </ul>
             )}
         </nav>
