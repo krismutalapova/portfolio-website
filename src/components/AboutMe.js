@@ -2,10 +2,10 @@ import React from 'react';
 
 function AboutMe() {
     return (
-        <section id="about" className="py-12 bg-gray-50 dark:bg-gray-800">
-            <div className="max-w-4xl mx-auto px-6 text-center">
-                <h2 className="text-2xl font-bold mb-4">About Me</h2>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+        <section className="w-full bg-gray-100 dark:bg-gray-900 py-12 xl:py-20 flex items-center justify-center">
+            <div className="w-full max-w-4xl px-4 xl:px-0 text-center">
+                <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold text-gray-800 dark:text-white mb-4">About Me</h2>
+                <p className="text-base md:text-lg xl:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
                     I'm a full-stack developer with a passion for building clean, user-focused applications.
                     With experience in both frontend and backend technologies, I enjoy turning ideas into functional,
                     responsive, and elegant digital products. My current interests include React, JavaScript, and all
