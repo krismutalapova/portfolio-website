@@ -13,7 +13,7 @@ function App() {
     <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       {/* Skip link for keyboard users */}
       <a href="#main-content" className="sr-only focus:not-sr-only absolute left-2 top-2 bg-blue-600 text-white px-4 py-2 rounded z-50">Skip to main content</a>
-      <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+      <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-500">
         <Navbar />
         <main id="main-content" className="flex-1 flex flex-col" tabIndex={-1}>
           <Routes>
@@ -35,10 +35,3 @@ function App() {
 }
 
 export default App;
-
-/* In your main layout (e.g., App.js or index.css), ensure:
-- bg-white for the main background in light mode
-- text-gray-900 for main text in light mode
-- Use bg-gray-50 or bg-gray-100 for section backgrounds (AboutMe, etc.)
-- Use bg-white for cards and content blocks
-- Use bg-gray-900 and text-white for dark mode */
