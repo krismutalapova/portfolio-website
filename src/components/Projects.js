@@ -140,26 +140,24 @@ function Projects() {
     }
 
     return (
-        <section id="projects" className="py-12 bg-white dark:bg-gray-900">
-            <div className="max-w-6xl mx-auto px-6">
-                <h2 className="text-2xl font-bold text-center mb-6">Projects</h2>
-
-                <div className="flex flex-wrap justify-center mb-8 gap-2">
+        <section className="w-full bg-gray-900 py-12 xl:py-20 flex flex-col items-center justify-center">
+            <div className="w-full max-w-6xl px-4 xl:px-0">
+                <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold text-white mb-8 text-center">Projects</h2>
+                <div className="flex flex-wrap gap-4 justify-center mb-8">
                     {allTags.map((tag) => (
                         <button
                             key={tag}
                             onClick={() => setActiveTag(tag)}
                             className={`px-4 py-2 rounded-full ${activeTag === tag
-                                ? 'bg-blue-600 text-white'
-                                : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200'
-                                } hover:bg-blue-500 transition`}
+                                ? 'bg-blue-700 text-white'
+                                : 'bg-gray-800 text-gray-200'
+                                } font-semibold text-sm md:text-base hover:bg-blue-800 transition`}
                         >
                             {tag}
                         </button>
                     ))}
                 </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {filteredProjects.map((project) => (
                         <article key={project.id} className="bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md overflow-hidden flex flex-col h-full transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl group">
                             <div
