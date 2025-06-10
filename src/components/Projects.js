@@ -178,7 +178,7 @@ function Projects() {
                                 <h3 className="text-base md:text-lg font-semibold mb-1">{project.title}</h3>
                                 <div className="mt-1 flex flex-wrap gap-2 overflow-x-hidden">
                                     {project.tags.map((tag, index) => (
-                                        <span key={index} className="text-xs md:text-sm bg-blue-500 dark:bg-blue-700 text-white px-2 py-1 rounded whitespace-nowrap">
+                                        <span key={index} className="text-xs md:text-sm bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 border border-gray-300 dark:border-gray-600 px-2 py-0.5 rounded font-normal cursor-default select-none">
                                             {tag}
                                         </span>
                                     ))}
