@@ -5,6 +5,8 @@ import tappyImage from '../assets/tappy.png';
 import portfolioImage from '../assets/portfolio.png';
 import zooImage from '../assets/zoo.png';
 import Spinner from './Spinner';
+import { FaReact, FaPython, FaMobileAlt } from 'react-icons/fa';
+import { SiTypescript, SiJavascript } from 'react-icons/si';
 
 const projectData = [
     {
@@ -99,10 +101,18 @@ Tech stack:
         title: 'Portfolio Site',
         image: portfolioImage,
         description: 'My personal portfolio site made using React and Tailwind CSS.',
-        link: '#',
+        link: 'https://github.com/krismutalapova/portfolio-website',
         tags: ['React', 'JavaScript']
     },
 ];
+
+const techIcons = {
+    'React': <FaReact title="React" className="mr-1 text-blue-400" />,
+    'React Native': <FaMobileAlt title="React Native" className="mr-1 text-green-500" />,
+    'TypeScript': <SiTypescript title="TypeScript" className="mr-1 text-blue-600" />,
+    'JavaScript': <SiJavascript title="JavaScript" className="mr-1 text-yellow-400" />,
+    'Python': <FaPython title="Python" className="mr-1 text-yellow-600" />,
+};
 
 function Projects() {
     const [expandedId, setExpandedId] = useState(null);
@@ -178,8 +188,8 @@ function Projects() {
                                 <h3 className="text-base md:text-lg font-semibold mb-1">{project.title}</h3>
                                 <div className="mt-1 flex flex-wrap gap-2 overflow-x-hidden">
                                     {project.tags.map((tag, index) => (
-                                        <span key={index} className="text-xs md:text-sm bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 border border-gray-300 dark:border-gray-600 px-2 py-0.5 rounded font-normal cursor-default select-none">
-                                            {tag}
+                                        <span key={index} className="text-xs md:text-sm bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 border border-gray-300 dark:border-gray-600 px-2 py-0.5 rounded font-normal cursor-default select-none flex items-center">
+                                            {techIcons[tag] || null}{tag}
                                         </span>
                                     ))}
                                 </div>
