@@ -5,6 +5,8 @@ Welcome to my personal portfolio! This site showcases my work, skills, and proje
 ## 🚀 Features
 - **About Me**: Learn more about my background and interests.
 - **Projects**: Explore a curated list of my projects, each with descriptions, tech stacks, and links.
+- **Filtering**: Filter projects by technology tags.
+- **Interactive Project Cards**: Expand/collapse project details for more information.
 - **Contact**: Find my GitHub, LinkedIn, and email for networking or collaboration.
 - **Dark/Light Mode**: Toggle between light and dark themes.
 - **Scroll to Top**: Easily navigate back to the top of the page.
@@ -12,11 +14,13 @@ Welcome to my personal portfolio! This site showcases my work, skills, and proje
 - **404 Page**: Friendly error page for unknown routes.
 - **Loading Spinner**: Animated spinner while loading projects.
 - **Smooth Scrolling**: Seamless navigation between sections.
+- **Skip to Main Content**: Accessibility feature for keyboard users.
 
 ## 🛠️ Tech Stack
 - **Frontend**: React, Tailwind CSS
 - **State Management**: React Hooks (useState, useEffect)
 - **Routing**: React Router DOM
+- **Icons**: react-icons
 - **Tooling**: Create React App, PostCSS, Autoprefixer
 
 ## 📁 Project Structure
@@ -71,6 +75,11 @@ my-portfolio/
 - tailwindcss
 - autoprefixer
 - postcss
+- react-icons
+
+## 🧪 Testing
+- Uses **Jest** and **React Testing Library** for unit and component tests.
+- Test files are located alongside components and in `src/components/components.test.js` and `src/App.test.js`.
 
 ## ♿ Accessibility & UX
 - Keyboard navigation and skip link support
