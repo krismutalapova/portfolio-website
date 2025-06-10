@@ -2,7 +2,7 @@ import profileImg from '../assets/profile.jpg';
 
 function Header() {
     return (
-        <header className="w-full min-h-[70vh] bg-gradient-to-tr from-blue-50 via-purple-50 to-pink-50 dark:from-blue-900 dark:via-purple-900 dark:to-pink-900 flex items-center justify-center py-16 xl:py-28">
+        <header className="w-full min-h-[70vh] bg-gradient-to-tr from-blue-100 via-purple-100 to-pink-100 dark:from-blue-900 dark:via-purple-900 dark:to-pink-900 flex items-center justify-center py-16 xl:py-28">
             <div className="w-full max-w-6xl flex flex-col xl:flex-row items-center justify-center gap-12 xl:gap-24 bg-transparent px-4 xl:px-12">
                 <div className="flex-shrink-0 flex justify-center items-center mb-8 xl:mb-0">
                     <div className="relative w-[40vw] max-w-[340px] h-[40vw] max-h-[420px] flex items-end bg-white/80 dark:bg-gray-900/80 rounded-t-[40%] rounded-b-[20px] shadow-xl overflow-hidden">

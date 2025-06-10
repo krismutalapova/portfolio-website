@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ThemeToggle from './ThemeToggle';
 
 const sectionIds = ['about', 'projects', 'contact'];
 
@@ -56,7 +57,7 @@ const Navbar = React.memo(function Navbar() {
                         className={`block w-7 h-1 bg-gray-800 dark:bg-white rounded transition-transform duration-300 ease-in-out ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}
                     ></span>
                 </button>
-                <ul className="hidden md:flex space-x-8 text-lg font-medium text-gray-700 dark:text-gray-300">
+                <ul className="hidden md:flex space-x-8 text-lg font-medium text-gray-700 dark:text-gray-300 items-center">
                     {navLinks.map(link => (
                         <li key={link.id}>
                             <a
@@ -68,6 +69,9 @@ const Navbar = React.memo(function Navbar() {
                             </a>
                         </li>
                     ))}
+                    <li className="ml-2">
+                        <ThemeToggle position="inline" />
+                    </li>
                 </ul>
             </div>
             {menuOpen && (
@@ -86,6 +90,9 @@ const Navbar = React.memo(function Navbar() {
                             </a>
                         </li>
                     ))}
+                    <li className="pt-2">
+                        <ThemeToggle position="menu" />
+                    </li>
                 </ul>
             )}
         </nav>

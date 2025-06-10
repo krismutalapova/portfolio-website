@@ -140,9 +140,9 @@ function Projects() {
     }
 
     return (
-        <section className="w-full bg-gray-900 py-12 xl:py-20 flex flex-col items-center justify-center">
+        <section className="w-full bg-gray-50 dark:bg-gray-900 py-12 xl:py-20 flex flex-col items-center justify-center">
             <div className="w-full max-w-6xl px-4 xl:px-0">
-                <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold text-white mb-8 text-center">Projects</h2>
+                <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold text-gray-800 dark:text-white mb-8 text-center">Projects</h2>
                 <div className="flex flex-wrap gap-4 justify-center mb-8">
                     {allTags.map((tag) => (
                         <button
@@ -150,7 +150,7 @@ function Projects() {
                             onClick={() => setActiveTag(tag)}
                             className={`px-4 py-2 rounded-full ${activeTag === tag
                                 ? 'bg-blue-700 text-white'
-                                : 'bg-gray-800 text-gray-200'
+                                : 'bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200'
                                 } font-semibold text-sm md:text-base hover:bg-blue-800 transition`}
                         >
                             {tag}

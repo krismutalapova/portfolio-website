@@ -6,7 +6,6 @@ import AboutMe from './components/AboutMe';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
-import ThemeToggle from './components/ThemeToggle';
 import NotFound from './components/NotFound';
 
 function App() {
@@ -30,12 +29,16 @@ function App() {
           </Routes>
         </main>
         <Footer />
-        <div className="fixed bottom-4 right-4 z-50">
-          <ThemeToggle />
-        </div>
       </div>
     </Router>
   );
 }
 
 export default App;
+
+/* In your main layout (e.g., App.js or index.css), ensure:
+- bg-white for the main background in light mode
+- text-gray-900 for main text in light mode
+- Use bg-gray-50 or bg-gray-100 for section backgrounds (AboutMe, etc.)
+- Use bg-white for cards and content blocks
+- Use bg-gray-900 and text-white for dark mode */
