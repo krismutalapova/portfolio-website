@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Header from './components/Header';
 import AboutMe from './components/AboutMe';
 import Projects from './components/Projects';
+import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import NotFound from './components/NotFound';
@@ -22,6 +23,8 @@ function App() {
                 <Header />
                 <AboutMe />
                 <Projects />
+                <div id="contact" tabIndex={-1} />
+                <ContactForm />
                 <ScrollToTop />
               </>
             } />

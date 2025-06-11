@@ -7,6 +7,7 @@ Welcome to my personal portfolio! This site showcases my work, skills, and proje
 - **Projects**: Explore a curated list of my projects, each with descriptions, tech stacks, and links.
 - **Filtering**: Filter projects by technology tags.
 - **Interactive Project Cards**: Expand/collapse project details for more information.
+- **Contact Form**: Collapsible panel styled to match other sections. Send me a message directly from the site with real email delivery (EmailJS integration), inline validation, accessibility, and success/error feedback.
 - **Contact**: Find my GitHub, LinkedIn, and email for networking or collaboration.
 - **Dark/Light Mode**: Toggle between light and dark themes.
 - **Scroll to Top**: Easily navigate back to the top of the page.
@@ -60,6 +61,19 @@ my-portfolio/
    ```
    The optimized build will be in the `build/` folder.
 
+## ✉️ EmailJS Integration (Contact Form)
+To enable real email delivery from the contact form, you must set up [EmailJS](https://www.emailjs.com/):
+
+1. Create a free EmailJS account and set up an email service and template.
+2. Add the following variables to a `.env` file in your project root:
+   ```env
+   REACT_APP_EMAILJS_SERVICE_ID=your_service_id
+   REACT_APP_EMAILJS_TEMPLATE_ID=your_template_id
+   REACT_APP_EMAILJS_USER_ID=your_public_key
+   ```
+3. Make sure your template uses the variables `from_name`, `from_email`, and `message` in the email body.
+4. The contact form will send emails to the address you configure in your EmailJS template.
+
 ## 📝 Code Overview
 - **App.js**: Main layout, imports all sections and utilities, sets up routing and 404 page.
 - **components/Navbar.js**: Responsive navigation bar with hamburger menu and anchor links.
@@ -72,6 +86,7 @@ my-portfolio/
 - **components/NotFound.js**: Custom 404 error page.
 - **components/Spinner.js**: Animated loading spinner.
 - **assets/**: Images for profile and projects.
+- **components/ContactForm.js**: Contact form component with EmailJS integration.
 
 ## 📦 Dependencies
 - react
@@ -81,10 +96,11 @@ my-portfolio/
 - autoprefixer
 - postcss
 - react-icons
+- emailjs-com
 
 ## 🧪 Testing
 - Uses **Jest** and **React Testing Library** for unit and component tests.
-- Test files are located alongside components and in `src/components/components.test.js` and `src/App.test.js`.
+- Test files are located alongside components and in `src/components/components.test.js`, `src/App.test.js`.
 
 ## ♿ Accessibility & UX
 - Keyboard navigation and skip link support
