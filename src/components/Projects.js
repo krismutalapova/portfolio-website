@@ -116,7 +116,9 @@ const techIcons = {
 
 function Projects() {
     const [expandedId, setExpandedId] = useState(null);
-    const [activeTag, setActiveTag] = useState('All');
+    const [activeTag, setActiveTag] = useState(() => {
+        return localStorage.getItem('activeTag') || 'All';
+    });
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -124,7 +126,21 @@ function Projects() {
         return () => clearTimeout(timer);
     }, []);
 
+    useEffect(() => {
+        localStorage.setItem('activeTag', activeTag);
+    }, [activeTag]);
+
     const allTags = ['All', ...new Set(projectData.flatMap(p => p.tags))];
+    const tagIcons = {
+        'React': <FaReact title="React" className="mr-1 text-blue-400" />,
+        'React Native': <FaMobileAlt title="React Native" className="mr-1 text-green-500" />,
+        'TypeScript': <SiTypescript title="TypeScript" className="mr-1 text-blue-600" />,
+        'JavaScript': <SiJavascript title="JavaScript" className="mr-1 text-yellow-400" />,
+        'Python': <FaPython title="Python" className="mr-1 text-yellow-600" />,
+    };
+
+    const allProjects = projectData.length;
+
     const filteredProjects = activeTag === 'All' ? projectData : projectData.filter(p => p.tags.includes(activeTag));
 
     const toggleDescription = (id) => {
@@ -142,7 +158,7 @@ function Projects() {
     return (
         <section className="w-full bg-gray-50 dark:bg-gray-900 py-12 xl:py-20 flex flex-col items-center justify-center">
             <div className="w-full max-w-6xl px-4 xl:px-0">
-                <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold text-gray-800 dark:text-white mb-8 text-center">Projects</h2>
+                <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold text-gray-800 dark:text-white mb-8 text-center">Projects ({filteredProjects.length}/{allProjects})</h2>
                 <div className="flex flex-wrap gap-4 justify-center mb-8">
                     {allTags.map((tag) => (
                         <button
@@ -151,9 +167,9 @@ function Projects() {
                             className={`px-4 py-2 rounded-full ${activeTag === tag
                                 ? 'bg-blue-700 text-white'
                                 : 'bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200'
-                                } font-semibold text-sm md:text-base hover:bg-blue-800 transition`}
+                                } font-semibold text-sm md:text-base hover:bg-blue-800 transition flex items-center`}
                         >
-                            {tag}
+                            {tagIcons[tag] && <span className="mr-1 flex items-center">{tagIcons[tag]}</span>}{tag}
                         </button>
                     ))}
                 </div>
