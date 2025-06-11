@@ -19,6 +19,7 @@ Welcome to my personal portfolio! This site showcases my work, skills, and proje
 - **Experience Section**: Timeline/cards for professional roles, companies, dates, and key achievements.
 - **Education Section**: Timeline/cards for degrees, institutions, years, and relevant coursework or achievements.
 - **Persistent Collapsible Panels**: The open/closed state of the Skills, Experience, and Education panels in the About Me section is remembered across page reloads.
+- **Downloadable CV**: Download my CV as a PDF directly from the header or footer.
 
 ## 🛠️ Tech Stack
 - **Frontend**: React, Tailwind CSS

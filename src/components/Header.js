@@ -19,13 +19,24 @@ function Header() {
                     <p className="text-base md:text-lg xl:text-xl text-gray-500 dark:text-gray-400 max-w-lg mx-auto xl:mx-0 break-words">
                         Building accessible, modern web experiences with a passion for clean code and elegant design.
                     </p>
-                    <a
-                        href="mailto:kris.mutalapova@pm.me"
-                        className="inline-block px-8 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700 transition font-semibold text-base md:text-lg xl:text-xl mt-2 max-w-full"
-                        style={{ wordBreak: 'break-word' }}
-                    >
-                        Contact Me
-                    </a>
+                    <div className="flex flex-col sm:flex-row items-center gap-4 mt-2 w-full">
+                        <a
+                            href="mailto:kris.mutalapova@pm.me"
+                            className="px-8 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700 transition font-semibold text-base md:text-lg xl:text-xl max-w-full"
+                            style={{ wordBreak: 'break-word' }}
+                        >
+                            Contact Me
+                        </a>
+                        <a
+                            href="/CV.pdf"
+                            download
+                            className="px-8 py-2 bg-gray-700 text-white rounded shadow hover:bg-gray-900 transition font-semibold text-base md:text-lg xl:text-xl max-w-full"
+                            style={{ wordBreak: 'break-word' }}
+                            aria-label="Download my CV as PDF"
+                        >
+                            Download my CV
+                        </a>
+                    </div>
                 </div>
             </div>
         </header>

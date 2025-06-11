@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { HiOutlineArrowDownTray } from 'react-icons/hi2';
 
 const Footer = React.memo(function Footer() {
     return (
@@ -19,6 +20,9 @@ const Footer = React.memo(function Footer() {
                     </a>
                     <a href="mailto:kris.mutalapova@pm.me" className="hover:text-blue-600 transition group" aria-label="Email">
                         <FaEnvelope className="inline text-2xl group-hover:scale-110 transition-transform" />
+                    </a>
+                    <a href="/CV.pdf" download className="hover:text-blue-600 transition group" aria-label="Download CV (PDF)">
+                        <HiOutlineArrowDownTray className="inline text-2xl group-hover:scale-110 transition-transform" />
                     </a>
                 </div>
             </div>
