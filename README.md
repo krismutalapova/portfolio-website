@@ -106,3 +106,6 @@ To enable real email delivery from the contact form, you must set up [EmailJS](h
 - Keyboard navigation and skip link support
 - Accessible color contrast and focus styles
 - Smooth scrolling and responsive design
+
+## 🗂️ Project Filter Persistence
+- The selected project filter/tag is now saved in your browser's localStorage and automatically restored after a page reload. This ensures your preferred filter remains active for a seamless browsing experience.
