@@ -15,6 +15,10 @@ Welcome to my personal portfolio! This site showcases my work, skills, and proje
 - **Loading Spinner**: Animated spinner while loading projects.
 - **Smooth Scrolling**: Seamless navigation between sections.
 - **Skip to Main Content**: Accessibility feature for keyboard users.
+- **Skills Section**: Visual display of key skills (JavaScript, Python, Java, React, Django, Docker, AI & Machine Learning, and more) with icons and proficiency bars, grouped by category.
+- **Experience Section**: Timeline/cards for professional roles, companies, dates, and key achievements.
+- **Education Section**: Timeline/cards for degrees, institutions, years, and relevant coursework or achievements.
+- **Persistent Collapsible Panels**: The open/closed state of the Skills, Experience, and Education panels in the About Me section is remembered across page reloads.
 
 ## 🛠️ Tech Stack
 - **Frontend**: React, Tailwind CSS
