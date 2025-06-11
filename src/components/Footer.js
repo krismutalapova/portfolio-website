@@ -4,7 +4,7 @@ import { HiOutlineArrowDownTray } from 'react-icons/hi2';
 
 const Footer = React.memo(function Footer() {
     return (
-        <footer className="w-full bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 py-8 flex flex-col items-center justify-center mt-12" role="contentinfo">
+        <footer className="w-full bg-gradient-to-tr from-blue-100 via-purple-100 to-pink-100 dark:from-blue-950 dark:via-purple-950 dark:to-gray-950 text-gray-700 dark:text-gray-300 py-8 flex flex-col items-center justify-center mt-12" role="contentinfo">
             <div className="w-full max-w-4xl px-4 flex flex-col md:flex-row items-center justify-between gap-4">
                 <div className="text-center md:text-left w-full md:w-auto">
                     <span className="block text-sm md:text-base">© {new Date().getFullYear()} Kristina Mutalapova</span>

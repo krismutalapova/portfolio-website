@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { FiChevronUp } from "react-icons/fi";
 
 function ScrollToTop() {
     const [isVisible, setIsVisible] = useState(false);
@@ -20,10 +21,10 @@ function ScrollToTop() {
         isVisible && (
             <button
                 onClick={scrollToTop}
-                className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 p-3 rounded-full bg-blue-600 text-white shadow-lg hover:bg-blue-700 transition z-50"
+                className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 p-3 rounded-full bg-gradient-to-tr from-blue-400 via-purple-400 to-pink-400 dark:from-blue-900 dark:via-purple-900 dark:to-pink-900 text-white shadow-lg hover:scale-110 hover:shadow-2xl transition-all duration-200 z-50 flex items-center justify-center"
                 aria-label="Scroll to top"
             >
-                ↑
+                <FiChevronUp className="text-2xl" />
             </button>
         )
     );
