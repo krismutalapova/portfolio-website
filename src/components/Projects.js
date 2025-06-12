@@ -164,10 +164,11 @@ function Projects() {
                         <button
                             key={tag}
                             onClick={() => setActiveTag(tag)}
-                            className={`px-4 py-2 rounded-full ${activeTag === tag
-                                ? 'bg-blue-700 text-white'
-                                : 'bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200'
-                                } font-semibold text-sm md:text-base hover:bg-blue-800 transition flex items-center`}
+                            className={`px-4 py-2 rounded-full border-2 font-semibold text-sm md:text-base flex items-center transition
+                                ${activeTag === tag
+                                    ? 'bg-[#c9a6e1] dark:bg-[#4b006e] text-[#4b006e] dark:text-white border-[#c9a6e1] dark:border-[#4b006e]'
+                                    : 'bg-transparent dark:bg-transparent text-[#a259c6] dark:text-[#c9a6e1] border-[#c9a6e1] dark:border-[#4b006e] hover:bg-[#e6d6f3] dark:hover:bg-[#2a003b] hover:text-[#4b006e] dark:hover:text-white'}
+                            `}
                         >
                             {tagIcons[tag] && <span className="mr-1 flex items-center">{tagIcons[tag]}</span>}{tag}
                         </button>
@@ -202,7 +203,10 @@ function Projects() {
                                 <h3 className="text-base md:text-lg font-semibold mb-1">{project.title}</h3>
                                 <div className="mt-1 flex flex-wrap gap-2 overflow-x-hidden">
                                     {project.tags.map((tag, index) => (
-                                        <span key={index} className="text-xs md:text-sm bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 border border-gray-300 dark:border-gray-600 px-2 py-0.5 rounded font-normal cursor-default select-none flex items-center">
+                                        <span
+                                            key={index}
+                                            className="text-xs md:text-sm bg-gray-200 dark:bg-gray-700 text-black dark:text-white border border-gray-300 dark:border-gray-600 px-2 py-0.5 rounded font-normal cursor-default select-none flex items-center"
+                                        >
                                             {techIcons[tag] || null}{tag}
                                         </span>
                                     ))}
@@ -216,7 +220,7 @@ function Projects() {
                                 )}
                                 <div className="mt-4 flex gap-2">
                                     {project.link && project.link !== '#' && (
-                                        <a href={project.link} className="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-xs md:text-sm font-medium" target="_blank" rel="noopener noreferrer">
+                                        <a href={project.link} className="px-3 py-1 bg-[#a259c6] dark:bg-[#4b006e] text-white rounded hover:bg-[#b97fd8] dark:hover:bg-[#2a003b] transition text-xs md:text-sm font-medium" target="_blank" rel="noopener noreferrer">
                                             View Project
                                         </a>
                                     )}
