@@ -22,7 +22,7 @@ function Header() {
                     <div className="flex flex-col sm:flex-row items-center gap-4 mt-2 w-full">
                         <a
                             href="mailto:kris.mutalapova@pm.me"
-                            className="px-8 py-2 bg-[#c9a6e1] dark:bg-[#4b006e] text-white rounded shadow hover:bg-[#a259c6] dark:hover:bg-[#2a003b] transition font-semibold text-base md:text-lg xl:text-xl max-w-full"
+                            className="px-8 py-2 bg-[#c9a6e1] dark:bg-[#bfa8e7] text-white rounded shadow hover:bg-[#a259c6] dark:hover:bg-[#2a003b] transition font-semibold text-base md:text-lg xl:text-xl max-w-full"
                             style={{ wordBreak: 'break-word' }}
                         >
                             Contact Me
@@ -30,7 +30,7 @@ function Header() {
                         <a
                             href="/CV.pdf"
                             download
-                            className="px-8 py-2 bg-gray-700 text-white rounded shadow hover:bg-[#a259c6] dark:hover:bg-[#4b006e] transition font-semibold text-base md:text-lg xl:text-xl max-w-full"
+                            className="px-8 py-2 bg-gray-700 text-white rounded shadow hover:bg-[#a259c6] dark:hover:bg-[#4b006e] dark:hover:border dark:hover:border-white transition font-semibold text-base md:text-lg xl:text-xl max-w-full"
                             style={{ wordBreak: 'break-word' }}
                             aria-label="Download my CV as PDF"
                         >
