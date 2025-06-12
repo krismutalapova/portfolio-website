@@ -62,7 +62,7 @@ const Navbar = React.memo(function Navbar() {
                         <li key={link.id}>
                             <a
                                 href={`#${link.id}`}
-                                className={`hover:underline transition-colors duration-200 ${activeSection === link.id ? 'text-[#c9a6e1] dark:text-[#4b006e] font-bold underline underline-offset-4' : 'text-[#a259c6] dark:text-[#c9a6e1] hover:text-[#c9a6e1] dark:hover:text-[#4b006e]'} `}
+                                className={`hover:underline transition-colors duration-200 ${activeSection === link.id ? 'text-[#e0b3ff] dark:text-[#e0b3ff] font-bold underline underline-offset-4' : 'text-[#a259c6] dark:text-[#c9a6e1] hover:text-[#c9a6e1] dark:hover:text-[#4b006e]'} `}
                                 onClick={handleLinkClick}
                             >
                                 {link.label}
@@ -83,7 +83,7 @@ const Navbar = React.memo(function Navbar() {
                         <li key={link.id}>
                             <a
                                 href={`#${link.id}`}
-                                className={`hover:underline transition-colors duration-200 ${activeSection === link.id ? 'text-[#c9a6e1] dark:text-[#4b006e] font-bold underline underline-offset-4' : 'text-[#a259c6] dark:text-[#c9a6e1] hover:text-[#c9a6e1] dark:hover:text-[#4b006e]'} `}
+                                className={`hover:underline transition-colors duration-200 ${activeSection === link.id ? 'text-[#e0b3ff] dark:text-[#e0b3ff] font-bold underline underline-offset-4' : 'text-[#a259c6] dark:text-[#c9a6e1] hover:text-[#c9a6e1] dark:hover:text-[#4b006e]'} `}
                                 onClick={handleLinkClick}
                             >
                                 {link.label}
