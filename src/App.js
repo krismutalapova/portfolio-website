@@ -1,3 +1,4 @@
+// App.js - Main application layout and routing
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -11,8 +12,9 @@ import NotFound from "./components/NotFound";
 
 function App() {
   return (
+    // Router provides client-side routing for the SPA
     <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-      {/* Skip link for keyboard users */}
+      {/* Skip link for keyboard users for accessibility */}
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only absolute left-2 top-2 bg-blue-600 text-white px-4 py-2 rounded z-50"
@@ -21,7 +23,12 @@ function App() {
       </a>
       <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-500">
         <Navbar />
-        <main id="main-content" className="flex-1 flex flex-col" tabIndex={-1}>
+        {/* Main content area with routing */}
+        <main
+          id="main-content"
+          className="flex-1 flex flex-col"
+          tabIndex={-1}
+        >
           <Routes>
             <Route
               path="/"
