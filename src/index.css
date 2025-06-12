@@ -8,8 +8,14 @@ html {
 
 /* Fade-in animation for mobile menu */
 @keyframes fade-in {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .animate-fade-in {
   animation: fade-in 0.3s ease;
@@ -17,23 +23,38 @@ html {
 
 /* Animated gradient and floating shapes in the header section */
 @keyframes gradient-move {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 .animate-gradient-move {
   background-size: 200% 200%;
   animation: gradient-move 8s ease-in-out infinite;
 }
 @keyframes float-slow {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-20px) scale(1.05); }
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
 }
 .animate-float-slow {
   animation: float-slow 7s ease-in-out infinite;
 }
 @keyframes float-slower {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(20px) scale(1.1); }
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(20px) scale(1.1);
+  }
 }
 .animate-float-slower {
   animation: float-slower 11s ease-in-out infinite;

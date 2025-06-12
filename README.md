@@ -3,6 +3,7 @@
 Welcome to my personal portfolio! This site showcases my work, skills, and projects as a full-stack developer. Built with React and styled using Tailwind CSS, it is designed to be clean, modern, and responsive.
 
 ## 🚀 Features
+
 - **About Me**: Learn more about my background and interests.
 - **Projects**: Explore a curated list of my projects, each with descriptions, tech stacks, and links.
 - **Filtering**: Filter projects by technology tags.
@@ -23,6 +24,7 @@ Welcome to my personal portfolio! This site showcases my work, skills, and proje
 - **Downloadable CV**: Download my CV as a PDF directly from the header or footer.
 
 ## 🛠️ Tech Stack
+
 - **Frontend**: React, Tailwind CSS
 - **State Management**: React Hooks (useState, useEffect)
 - **Routing**: React Router DOM
@@ -30,6 +32,7 @@ Welcome to my personal portfolio! This site showcases my work, skills, and proje
 - **Tooling**: Create React App, PostCSS, Autoprefixer
 
 ## 📁 Project Structure
+
 ```
 my-portfolio/
 ├── public/              # Static files (index.html, icons, etc.)
@@ -46,6 +49,7 @@ my-portfolio/
 ```
 
 ## 🧑‍💻 How to Run & Build
+
 1. **Install dependencies**:
    ```bash
    npm install
@@ -62,6 +66,7 @@ my-portfolio/
    The optimized build will be in the `build/` folder.
 
 ## ✉️ EmailJS Integration (Contact Form)
+
 To enable real email delivery from the contact form, you must set up [EmailJS](https://www.emailjs.com/):
 
 1. Create a free EmailJS account and set up an email service and template.
@@ -75,6 +80,7 @@ To enable real email delivery from the contact form, you must set up [EmailJS](h
 4. The contact form will send emails to the address you configure in your EmailJS template.
 
 ## 📝 Code Overview
+
 - **App.js**: Main layout, imports all sections and utilities, sets up routing and 404 page.
 - **components/Navbar.js**: Responsive navigation bar with hamburger menu and anchor links.
 - **components/Header.js**: Profile image, name, and tagline.
@@ -89,6 +95,7 @@ To enable real email delivery from the contact form, you must set up [EmailJS](h
 - **components/ContactForm.js**: Contact form component with EmailJS integration.
 
 ## 📦 Dependencies
+
 - react
 - react-dom
 - react-router-dom
@@ -99,13 +106,16 @@ To enable real email delivery from the contact form, you must set up [EmailJS](h
 - emailjs-com
 
 ## 🧪 Testing
+
 - Uses **Jest** and **React Testing Library** for unit and component tests.
 - Test files are located alongside components and in `src/components/components.test.js`, `src/App.test.js`.
 
 ## ♿ Accessibility & UX
+
 - Keyboard navigation and skip link support
 - Accessible color contrast and focus styles
 - Smooth scrolling and responsive design
 
 ## 🗂️ Project Filter Persistence
+
 - The selected project filter/tag is now saved in your browser's localStorage and automatically restored after a page reload. This ensures your preferred filter remains active for a seamless browsing experience.
