@@ -18,10 +18,11 @@ const Footer = React.memo(function Footer() {
                         className="hover:text-blue-600 transition group" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                         <FaLinkedin className="inline text-2xl group-hover:scale-110 transition-transform" />
                     </a>
-                    <a href="mailto:kris.mutalapova@pm.me" className="hover:text-blue-600 transition group" aria-label="Email">
+                    <a href="mailto:kris.mutalapova@pm.me" className="hover:text-[#a259c6] dark:hover:text-[#4b006e] transition group"
+                        aria-label="Email">
                         <FaEnvelope className="inline text-2xl group-hover:scale-110 transition-transform" />
                     </a>
-                    <a href="/CV.pdf" download className="hover:text-blue-600 transition group" aria-label="Download CV (PDF)">
+                    <a href="/CV.pdf" download className="hover:text-[#a259c6] dark:hover:text-[#4b006e] transition group" aria-label="Download CV (PDF)">
                         <HiOutlineArrowDownTray className="inline text-2xl group-hover:scale-110 transition-transform" />
                     </a>
                 </div>
