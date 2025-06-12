@@ -2,7 +2,7 @@ import profileImg from '../assets/profile.jpg';
 
 function Header() {
     return (
-        <header className="w-full min-h-[70vh] bg-gradient-to-tr from-blue-100 via-purple-100 to-pink-100 dark:from-blue-950 dark:via-purple-950 dark:to-gray-950 flex items-center justify-center py-16 xl:py-28">
+        <header className="w-full min-h-[70vh] bg-gradient-to-tr from-blue-100 via-purple-100 to-pink-100 dark:from-[#1a0023] dark:via-[#4b006e] dark:to-[#0a0010] flex items-center justify-center py-16 xl:py-28">
             <div className="w-full max-w-6xl flex flex-col xl:flex-row items-center justify-center gap-12 xl:gap-24 bg-transparent px-4 xl:px-12">
                 <div className="flex-shrink-0 flex justify-center items-center mb-8 xl:mb-0">
                     <div className="relative w-[40vw] max-w-[340px] h-[40vw] max-h-[420px] flex items-end bg-white/80 dark:bg-gray-900/80 rounded-t-[40%] rounded-b-[20px] shadow-xl overflow-hidden">
@@ -22,7 +22,7 @@ function Header() {
                     <div className="flex flex-col sm:flex-row items-center gap-4 mt-2 w-full">
                         <a
                             href="mailto:kris.mutalapova@pm.me"
-                            className="px-8 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700 transition font-semibold text-base md:text-lg xl:text-xl max-w-full"
+                            className="px-8 py-2 bg-[#c9a6e1] dark:bg-[#4b006e] text-white rounded shadow hover:bg-[#a259c6] dark:hover:bg-[#2a003b] transition font-semibold text-base md:text-lg xl:text-xl max-w-full"
                             style={{ wordBreak: 'break-word' }}
                         >
                             Contact Me
@@ -30,7 +30,7 @@ function Header() {
                         <a
                             href="/CV.pdf"
                             download
-                            className="px-8 py-2 bg-gray-700 text-white rounded shadow hover:bg-gray-900 transition font-semibold text-base md:text-lg xl:text-xl max-w-full"
+                            className="px-8 py-2 bg-gray-700 text-white rounded shadow hover:bg-[#a259c6] dark:hover:bg-[#4b006e] transition font-semibold text-base md:text-lg xl:text-xl max-w-full"
                             style={{ wordBreak: 'break-word' }}
                             aria-label="Download my CV as PDF"
                         >
