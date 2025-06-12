@@ -34,7 +34,7 @@ const Navbar = React.memo(function Navbar() {
     ];
 
     return (
-        <nav className="bg-gray-100 dark:bg-gray-800 shadow-md" aria-label="Main navigation">
+        <nav className="bg-gray-100 dark:bg-[#1a0023] shadow-md" aria-label="Main navigation">
             <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
                 <div className="text-2xl font-extrabold tracking-tight text-gray-800 dark:text-white flex items-center gap-2">
                     <span className="inline-block w-3 h-3 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
@@ -57,12 +57,12 @@ const Navbar = React.memo(function Navbar() {
                         className={`block w-7 h-1 bg-gray-800 dark:bg-white rounded transition-transform duration-300 ease-in-out ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}
                     ></span>
                 </button>
-                <ul className="hidden md:flex space-x-8 text-lg font-medium text-gray-700 dark:text-gray-300 items-center">
+                <ul className="hidden md:flex space-x-8 text-lg font-medium items-center">
                     {navLinks.map(link => (
                         <li key={link.id}>
                             <a
                                 href={`#${link.id}`}
-                                className={`hover:text-blue-500 transition-colors duration-200 ${activeSection === link.id ? 'text-blue-600 dark:text-blue-400 font-bold underline underline-offset-4' : ''}`}
+                                className={`hover:underline transition-colors duration-200 ${activeSection === link.id ? 'text-[#c9a6e1] dark:text-[#4b006e] font-bold underline underline-offset-4' : 'text-[#a259c6] dark:text-[#c9a6e1] hover:text-[#c9a6e1] dark:hover:text-[#4b006e]'} `}
                                 onClick={handleLinkClick}
                             >
                                 {link.label}
@@ -77,13 +77,13 @@ const Navbar = React.memo(function Navbar() {
             {menuOpen && (
                 <ul
                     id="navbar-menu"
-                    className="md:hidden flex flex-col items-center bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 py-6 space-y-6 shadow-lg animate-fade-in z-50 transition-all duration-300 text-xl font-semibold rounded-b-xl"
+                    className="md:hidden flex flex-col items-center bg-white dark:bg-[#1a0023] py-6 space-y-6 shadow-lg animate-fade-in z-50 transition-all duration-300 text-xl font-semibold rounded-b-xl"
                 >
                     {navLinks.map(link => (
                         <li key={link.id}>
                             <a
                                 href={`#${link.id}`}
-                                className={`hover:text-blue-500 transition-colors duration-200 ${activeSection === link.id ? 'text-blue-600 dark:text-blue-400 font-bold underline underline-offset-4' : ''}`}
+                                className={`hover:underline transition-colors duration-200 ${activeSection === link.id ? 'text-[#c9a6e1] dark:text-[#4b006e] font-bold underline underline-offset-4' : 'text-[#a259c6] dark:text-[#c9a6e1] hover:text-[#c9a6e1] dark:hover:text-[#4b006e]'} `}
                                 onClick={handleLinkClick}
                             >
                                 {link.label}
