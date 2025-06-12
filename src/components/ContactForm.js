@@ -112,7 +112,7 @@ const ContactForm = () => {
                                 type="text"
                                 id="name"
                                 name="name"
-                                className={`w-full px-3 py-2 border rounded focus:outline-none focus:ring bg-white dark:bg-gray-900 text-gray-900 dark:text-white ${errors.name ? 'border-red-500' : 'border-gray-300'}`}
+                                className={`w-full px-3 py-2 border rounded focus:outline-none focus:ring bg-white dark:bg-gray-900 text-gray-900 dark:text-white ${errors.name ? 'border-red-500' : 'border-[#c9a6e1] dark:border-[#4b006e]'} focus:border-[#c9a6e1] dark:focus:border-[#4b006e]`}
                                 value={formData.name}
                                 onChange={handleChange}
                                 onBlur={handleBlur}
@@ -131,7 +131,7 @@ const ContactForm = () => {
                                 type="email"
                                 id="email"
                                 name="email"
-                                className={`w-full px-3 py-2 border rounded focus:outline-none focus:ring bg-white dark:bg-gray-900 text-gray-900 dark:text-white ${errors.email ? 'border-red-500' : 'border-gray-300'}`}
+                                className={`w-full px-3 py-2 border rounded focus:outline-none focus:ring bg-white dark:bg-gray-900 text-gray-900 dark:text-white ${errors.email ? 'border-red-500' : 'border-[#c9a6e1] dark:border-[#4b006e]'} focus:border-[#c9a6e1] dark:focus:border-[#4b006e]`}
                                 value={formData.email}
                                 onChange={handleChange}
                                 onBlur={handleBlur}
@@ -149,7 +149,7 @@ const ContactForm = () => {
                             <textarea
                                 id="message"
                                 name="message"
-                                className={`w-full px-3 py-2 border rounded focus:outline-none focus:ring bg-white dark:bg-gray-900 text-gray-900 dark:text-white ${errors.message ? 'border-red-500' : 'border-gray-300'}`}
+                                className={`w-full px-3 py-2 border rounded focus:outline-none focus:ring bg-white dark:bg-gray-900 text-gray-900 dark:text-white ${errors.message ? 'border-red-500' : 'border-[#c9a6e1] dark:border-[#4b006e]'} focus:border-[#c9a6e1] dark:focus:border-[#4b006e]`}
                                 value={formData.message}
                                 onChange={handleChange}
                                 onBlur={handleBlur}
