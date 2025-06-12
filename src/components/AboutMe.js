@@ -11,18 +11,18 @@ function CollapsiblePanel({ title, children, defaultOpen = false }) {
         localStorage.setItem(storageKey, open);
     }, [open, storageKey]);
     return (
-        <div className="mb-6">
+        <div className={`mb-6 border-2 rounded-2xl ${open ? 'border-[#c9a6e1] dark:border-[#4b006e]' : 'border-transparent'}`}>
             <button
-                className="w-full flex justify-between items-center px-4 py-3 bg-gray-200 dark:bg-gray-800 rounded-t-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-left"
+                className="w-full flex justify-between items-center px-4 py-3 bg-gray-200 dark:bg-gray-800 rounded-t-2xl focus:outline-none focus:ring-2 focus:ring-[#c9a6e1] dark:focus:ring-[#4b006e] text-left"
                 onClick={() => setOpen((v) => !v)}
                 aria-expanded={open}
                 aria-controls={`panel-${title}`}
             >
                 <span className="font-semibold text-lg text-gray-800 dark:text-white">{title}</span>
-                <span className="ml-2 text-xl">{open ? '−' : '+'}</span>
+                <span className="ml-2 text-xl">{open ? '-' : '+'}</span>
             </button>
             {open && (
-                <div id={`panel-${title}`} className="bg-white dark:bg-gray-900 rounded-b-lg shadow p-4 border-t border-gray-300 dark:border-gray-700">
+                <div id={`panel-${title}`} className="bg-white dark:bg-gray-900 rounded-b-2xl shadow p-4 border-t border-gray-300 dark:border-gray-700">
                     {children}
                 </div>
             )}
@@ -49,7 +49,7 @@ function AboutMe() {
                                 <span className="text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">{skill.name}</span>
                                 <div className="w-20 h-2 bg-gray-300 dark:bg-gray-700 rounded-full overflow-hidden">
                                     <div
-                                        className="h-full bg-blue-500 dark:bg-blue-400 rounded-full transition-all duration-500"
+                                        className="h-full bg-[#c9a6e1] dark:bg-[#4b006e] rounded-full transition-all duration-500"
                                         style={{ width: `${skill.level}%` }}
                                         aria-label={`${skill.name} proficiency: ${skill.level}%`}
                                     ></div>
