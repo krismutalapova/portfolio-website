@@ -10,7 +10,6 @@ function ProjectCard({ project, expandedId, toggleDescription, techIcons }) {
                 className="relative w-full h-48 sm:h-56 md:h-48 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
                 onClick={() => toggleDescription(project.id)}
                 tabIndex={0}
-                role="button"
                 aria-expanded={expandedId === project.id}
                 aria-controls={`project-desc-${project.id}`}
                 aria-label={

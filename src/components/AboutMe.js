@@ -50,7 +50,7 @@ function AboutMe() {
                 </p>
                 {/* Skills Panel */}
                 <CollapsiblePanel title="Skills" defaultOpen={false}>
-                    <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 justify-items-center" role="list">
+                    <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 justify-items-center">
                         {skills.map((skill) => (
                             <li key={skill.name} className="w-full">
                                 <SkillCard skill={skill} />
@@ -60,7 +60,7 @@ function AboutMe() {
                 </CollapsiblePanel>
                 {/* Experience Panel */}
                 <CollapsiblePanel title="Experience" defaultOpen={false}>
-                    <ul className="flex flex-col gap-8" role="list">
+                    <ul className="flex flex-col gap-8">
                         {experience.map((exp) => (
                             <li key={exp.title + exp.company}>
                                 <ExperienceCard exp={exp} />
@@ -70,7 +70,7 @@ function AboutMe() {
                 </CollapsiblePanel>
                 {/* Education Panel */}
                 <CollapsiblePanel title="Education" defaultOpen={false}>
-                    <ul className="flex flex-col gap-8 mb-4" role="list">
+                    <ul className="flex flex-col gap-8 mb-4">
                         {education.map((edu) => (
                             <li key={edu.degree + edu.institution}>
                                 <EducationCard edu={edu} />
