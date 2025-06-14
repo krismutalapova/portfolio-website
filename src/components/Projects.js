@@ -10,6 +10,17 @@ import { SiTypescript, SiJavascript } from "react-icons/si";
 import TagFilter from "./TagFilter";
 import ProjectCard from "./ProjectCard";
 
+const SECTION_IDS = ["about", "projects", "contact"];
+const TAG_ALL = "All";
+
+const TAG_ICONS = {
+    React: <FaReact title="React" className="mr-1 text-blue-400" />,
+    "React Native": <FaMobileAlt title="React Native" className="mr-1 text-green-500" />,
+    TypeScript: <SiTypescript title="TypeScript" className="mr-1 text-blue-600" />,
+    JavaScript: <SiJavascript title="JavaScript" className="mr-1 text-yellow-400" />,
+    Python: <FaPython title="Python" className="mr-1 text-yellow-600" />,
+};
+
 const projectData = [
     {
         id: 1,
@@ -109,26 +120,10 @@ Tech stack:
     },
 ];
 
-const techIcons = {
-    React: <FaReact title="React" className="mr-1 text-blue-400" />,
-    "React Native": (
-        <FaMobileAlt title="React Native" className="mr-1 text-green-500" />
-    ),
-    TypeScript: (
-        <SiTypescript title="TypeScript" className="mr-1 text-blue-600" />
-    ),
-    JavaScript: (
-        <SiJavascript title="JavaScript" className="mr-1 text-yellow-400" />
-    ),
-    Python: <FaPython title="Python" className="mr-1 text-yellow-600" />,
-};
-
-// REMOVE the entire ProjectCard function definition from here, as it is now in its own file.
-
 function Projects() {
     const [expandedId, setExpandedId] = useState(null);
     const [activeTag, setActiveTag] = useState(() => {
-        return localStorage.getItem("activeTag") || "All";
+        return localStorage.getItem("activeTag") || TAG_ALL;
     });
     const [loading, setLoading] = useState(true);
 
@@ -141,25 +136,13 @@ function Projects() {
         localStorage.setItem("activeTag", activeTag);
     }, [activeTag]);
 
-    const allTags = ["All", ...new Set(projectData.flatMap((p) => p.tags))];
-    const tagIcons = {
-        React: <FaReact title="React" className="mr-1 text-blue-400" />,
-        "React Native": (
-            <FaMobileAlt title="React Native" className="mr-1 text-green-500" />
-        ),
-        TypeScript: (
-            <SiTypescript title="TypeScript" className="mr-1 text-blue-600" />
-        ),
-        JavaScript: (
-            <SiJavascript title="JavaScript" className="mr-1 text-yellow-400" />
-        ),
-        Python: <FaPython title="Python" className="mr-1 text-yellow-600" />,
-    };
+    const allTags = [TAG_ALL, ...new Set(projectData.flatMap((p) => p.tags))];
+    const tagIcons = TAG_ICONS;
 
     const allProjects = projectData.length;
 
     const filteredProjects =
-        activeTag === "All"
+        activeTag === TAG_ALL
             ? projectData
             : projectData.filter((p) => p.tags.includes(activeTag));
 
@@ -203,7 +186,7 @@ function Projects() {
                                 project={project}
                                 expandedId={expandedId}
                                 toggleDescription={toggleDescription}
-                                techIcons={techIcons}
+                                techIcons={TAG_ICONS}
                             />
                         </li>
                     ))}

@@ -2,11 +2,15 @@ import React, { useState, useRef } from "react";
 import Spinner from "./Spinner";
 import emailjs from "emailjs-com";
 
-const initialFormData = { name: "", email: "", message: "" };
-const initialErrors = { name: "", email: "", message: "" };
+const INITIAL_FORM_DATA = { name: "", email: "", message: "" };
+const INITIAL_ERRORS = { name: "", email: "", message: "" };
+const RESULT_MESSAGES = {
+    success: "Message sent successfully!",
+    error: "Failed to send message. Please try again.",
+};
 
 function validate(formData) {
-    const errors = { ...initialErrors };
+    const errors = { ...INITIAL_ERRORS };
     if (!formData.name.trim()) {
         errors.name = "Name is required.";
     } else if (formData.name.length > 50) {
@@ -30,8 +34,8 @@ const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
 const USER_ID = process.env.REACT_APP_EMAILJS_USER_ID;
 
 const ContactForm = () => {
-    const [formData, setFormData] = useState(initialFormData);
-    const [errors, setErrors] = useState(initialErrors);
+    const [formData, setFormData] = useState(INITIAL_FORM_DATA);
+    const [errors, setErrors] = useState(INITIAL_ERRORS);
     const [isLoading, setIsLoading] = useState(false);
     const [result, setResult] = useState(null);
     const [touched, setTouched] = useState({
@@ -89,14 +93,14 @@ const ContactForm = () => {
                 USER_ID,
             )
             .then(() => {
-                setResult({ type: "success", message: "Message sent successfully!" });
-                setFormData(initialFormData);
+                setResult({ type: "success", message: RESULT_MESSAGES.success });
+                setFormData(INITIAL_FORM_DATA);
                 setIsLoading(false);
             })
             .catch((error) => {
                 setResult({
                     type: "error",
-                    message: "Failed to send message. Please try again.",
+                    message: RESULT_MESSAGES.error,
                 });
                 setIsLoading(false);
                 console.error("EmailJS error:", error);
