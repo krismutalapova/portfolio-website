@@ -1,14 +1,14 @@
 // App.js - Main application layout and routing
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Header from "./components/Header";
-import AboutMe from "./components/AboutMe";
-import Projects from "./components/Projects";
-import ContactForm from "./components/ContactForm";
-import Footer from "./components/Footer";
-import ScrollToTop from "./components/ScrollToTop";
-import NotFound from "./components/NotFound";
+import Navbar from "../shared/Navbar";
+import Header from "../shared/Header";
+import AboutMe from "./features/about/AboutMe";
+import Projects from "./features/projects/Projects";
+import ContactForm from "./features/contact/ContactForm";
+import Footer from "../shared/Footer";
+import ScrollToTop from "../shared/ScrollToTop";
+import NotFound from "./features/notfound/NotFound";
 
 function App() {
   return (
