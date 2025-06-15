@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from "react";
-import todoImage from "../assets/todo.png";
-import eruditioImage from "../assets/eruditio.png";
-import tappyImage from "../assets/tappy.png";
-import portfolioImage from "../assets/portfolio.png";
-import zooImage from "../assets/zoo.png";
-import Spinner from "./Spinner";
-import { FaReact, FaPython, FaMobileAlt } from "react-icons/fa";
-import { SiTypescript, SiJavascript } from "react-icons/si";
-import TagFilter from "./TagFilter";
-import ProjectCard from "./ProjectCard";
+import React, { useState, useEffect } from 'react';
+import todoImage from '../../assets/todo.png';
+import eruditioImage from '../../assets/eruditio.png';
+import tappyImage from '../../assets/tappy.png';
+import portfolioImage from '../../assets/portfolio.png';
+import zooImage from '../../assets/zoo.png';
+import Spinner from '../../shared/Spinner';
+import { FaReact, FaPython, FaMobileAlt } from 'react-icons/fa';
+import { SiTypescript, SiJavascript } from 'react-icons/si';
+import TagFilter from './TagFilter';
+import ProjectCard from './ProjectCard';
 
-const TAG_ALL = "All";
+const TAG_ALL = 'All';
 
 const TAG_ICONS = {
     React: <FaReact title="React" className="mr-1 text-blue-400" />,
-    "React Native": <FaMobileAlt title="React Native" className="mr-1 text-green-500" />,
+    'React Native': <FaMobileAlt title="React Native" className="mr-1 text-green-500" />,
     TypeScript: <SiTypescript title="TypeScript" className="mr-1 text-blue-600" />,
     JavaScript: <SiJavascript title="JavaScript" className="mr-1 text-yellow-400" />,
     Python: <FaPython title="Python" className="mr-1 text-yellow-600" />,
@@ -23,7 +23,7 @@ const TAG_ICONS = {
 const projectData = [
     {
         id: 1,
-        title: "Todo App",
+        title: 'Todo App',
         image: todoImage,
         description: `A simple and elegant task management app built with React and styled using Tailwind CSS. 
         Users can add, complete, and delete tasks, with data persisted in localStorage for a seamless experience across sessions.\n
@@ -37,12 +37,12 @@ Tech stack:
 • Frontend: React, Tailwind CSS
 • State Management: useState, useEffect
 • Storage: localStorage`,
-        link: "https://github.com/krismutalapova/todo-react-native",
-        tags: ["React Native", "TypeScript"],
+        link: 'https://github.com/krismutalapova/todo-react-native',
+        tags: ['React Native', 'TypeScript'],
     },
     {
         id: 2,
-        title: "Eruditio - Learning Platform",
+        title: 'Eruditio - Learning Platform',
         image: eruditioImage,
         description: `Eruditio is a full-stack tutoring platform developed as a final project at Salt. 
         It allows students to find tutors and connect with them through live video calls using WebRTC.
@@ -60,12 +60,12 @@ Tech stack:
 • Database: MongoDB
 • Real-time Communication: WebRTC
 • Deployment: Docker, docker-compose`,
-        link: "https://github.com/krismutalapova/eruditio",
-        tags: ["React", "TypeScript"],
+        link: 'https://github.com/krismutalapova/eruditio',
+        tags: ['React', 'TypeScript'],
     },
     {
         id: 3,
-        title: "Zoo System Simulation",
+        title: 'Zoo System Simulation',
         image: zooImage,
         description: `My first Python application project that uses Object-Oriented Programming to simulate a day at the zoo. 
         You can manage animals and visitors, run daily simulations, save/load zoo state, and interact through a terminal-based menu.
@@ -83,12 +83,12 @@ Tech stack:
 • Libraries: colorama, json
 • Testing: unittest
 • Linting: pylint with .pylintrc configuration`,
-        link: "https://github.com/krismutalapova/zoo_system_simulation",
-        tags: ["Python"],
+        link: 'https://github.com/krismutalapova/zoo_system_simulation',
+        tags: ['Python'],
     },
     {
         id: 4,
-        title: "Tappy - Send Gifs to Friends",
+        title: 'Tappy - Send Gifs to Friends',
         image: tappyImage,
         description: `Tappy is a mobile app that allows users to gift other users with "Taps", which can be redeemed for free beverages 
         and pastries at their favorite coffee shops, bars, and restaurants.
@@ -105,24 +105,23 @@ Tech stack:
 • Backend Services: Firebase (Auth, Firestore, Functions)
 • Payments: Stripe
 • Email: Mailgun`,
-        link: "https://github.com/Mobbishly/TappyPublic",
-        tags: ["React Native", "JavaScript"],
+        link: 'https://github.com/Mobbishly/TappyPublic',
+        tags: ['React Native', 'JavaScript'],
     },
     {
         id: 5,
-        title: "Portfolio Site",
+        title: 'Portfolio Site',
         image: portfolioImage,
-        description:
-            "My personal portfolio site made using React and Tailwind CSS.",
-        link: "https://github.com/krismutalapova/portfolio-website",
-        tags: ["React", "JavaScript"],
+        description: 'My personal portfolio site made using React and Tailwind CSS.',
+        link: 'https://github.com/krismutalapova/portfolio-website',
+        tags: ['React', 'JavaScript'],
     },
 ];
 
 function Projects() {
     const [expandedId, setExpandedId] = useState(null);
     const [activeTag, setActiveTag] = useState(() => {
-        return localStorage.getItem("activeTag") || TAG_ALL;
+        return localStorage.getItem('activeTag') || TAG_ALL;
     });
     const [loading, setLoading] = useState(true);
 
@@ -132,7 +131,7 @@ function Projects() {
     }, []);
 
     useEffect(() => {
-        localStorage.setItem("activeTag", activeTag);
+        localStorage.setItem('activeTag', activeTag);
     }, [activeTag]);
 
     const allTags = [TAG_ALL, ...new Set(projectData.flatMap((p) => p.tags))];
@@ -141,9 +140,7 @@ function Projects() {
     const allProjects = projectData.length;
 
     const filteredProjects =
-        activeTag === TAG_ALL
-            ? projectData
-            : projectData.filter((p) => p.tags.includes(activeTag));
+        activeTag === TAG_ALL ? projectData : projectData.filter((p) => p.tags.includes(activeTag));
 
     const toggleDescription = (id) => {
         setExpandedId(expandedId === id ? null : id);

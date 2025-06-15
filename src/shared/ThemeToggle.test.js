@@ -1,5 +1,5 @@
-import { render, screen, fireEvent } from "@testing-library/react";
-import ThemeToggle from "./ThemeToggle";
+import { render, screen, fireEvent } from '@testing-library/react';
+import ThemeToggle from './ThemeToggle';
 
 function setMatchMedia(matches) {
     window.matchMedia = jest.fn().mockImplementation((query) => ({
@@ -12,7 +12,7 @@ function setMatchMedia(matches) {
     }));
 }
 
-describe("ThemeToggle", () => {
+describe('ThemeToggle', () => {
     beforeEach(() => {
         window.matchMedia = jest.fn().mockImplementation((query) => ({
             matches: false,
@@ -25,39 +25,39 @@ describe("ThemeToggle", () => {
         localStorage.clear();
     });
 
-    it("renders nothing if position is not inline or menu", () => {
+    it('renders nothing if position is not inline or menu', () => {
         const { container } = render(<ThemeToggle position="other" />);
         expect(container.firstChild).toBeNull();
     });
 
-    it("renders sun icon in light mode", () => {
+    it('renders sun icon in light mode', () => {
         setMatchMedia(false);
         render(<ThemeToggle position="inline" />);
         expect(screen.getByLabelText(/toggle theme/i)).toBeInTheDocument();
     });
 
-    it("renders moon icon in dark mode", () => {
+    it('renders moon icon in dark mode', () => {
         setMatchMedia(true);
-        localStorage.setItem("theme", "dark");
+        localStorage.setItem('theme', 'dark');
         render(<ThemeToggle position="inline" />);
         expect(screen.getByLabelText(/toggle theme/i)).toBeInTheDocument();
     });
 
-    it("toggles theme on click", () => {
+    it('toggles theme on click', () => {
         render(<ThemeToggle position="inline" />);
-        const btn = screen.getByRole("button", { name: /toggle theme/i });
+        const btn = screen.getByRole('button', { name: /toggle theme/i });
         fireEvent.click(btn);
-        expect(["dark", "light"]).toContain(localStorage.getItem("theme"));
+        expect(['dark', 'light']).toContain(localStorage.getItem('theme'));
     });
 
-    it("shows tooltip on hover (web only)", async () => {
+    it('shows tooltip on hover (web only)', async () => {
         render(<ThemeToggle position="inline" />);
-        const btn = screen.getByRole("button", { name: /toggle theme/i });
+        const btn = screen.getByRole('button', { name: /toggle theme/i });
         fireEvent.mouseOver(btn);
         expect(screen.getByText(/switch to/i)).toBeInTheDocument();
     });
 
-    it("renders nothing if no position prop is provided", () => {
+    it('renders nothing if no position prop is provided', () => {
         const { container } = render(<ThemeToggle />);
         expect(container.firstChild).toBeNull();
     });

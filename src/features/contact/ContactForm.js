@@ -1,30 +1,30 @@
-import React, { useState, useRef } from "react";
-import Spinner from "./Spinner";
-import emailjs from "emailjs-com";
+import React, { useState, useRef } from 'react';
+import Spinner from '../../shared/Spinner';
+import emailjs from 'emailjs-com';
 
-const INITIAL_FORM_DATA = { name: "", email: "", message: "" };
-const INITIAL_ERRORS = { name: "", email: "", message: "" };
+const INITIAL_FORM_DATA = { name: '', email: '', message: '' };
+const INITIAL_ERRORS = { name: '', email: '', message: '' };
 const RESULT_MESSAGES = {
-    success: "Message sent successfully!",
-    error: "Failed to send message. Please try again.",
+    success: 'Message sent successfully!',
+    error: 'Failed to send message. Please try again.',
 };
 
 function validate(formData) {
     const errors = { ...INITIAL_ERRORS };
     if (!formData.name.trim()) {
-        errors.name = "Name is required.";
+        errors.name = 'Name is required.';
     } else if (formData.name.length > 50) {
-        errors.name = "Name is too long.";
+        errors.name = 'Name is too long.';
     }
     if (!formData.email.trim()) {
-        errors.email = "Email is required.";
+        errors.email = 'Email is required.';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-        errors.email = "Enter a valid email address.";
+        errors.email = 'Enter a valid email address.';
     }
     if (!formData.message.trim()) {
-        errors.message = "Message is required.";
+        errors.message = 'Message is required.';
     } else if (formData.message.length > 1000) {
-        errors.message = "Message is too long.";
+        errors.message = 'Message is too long.';
     }
     return errors;
 }
@@ -48,7 +48,7 @@ const ContactForm = () => {
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
-        setErrors({ ...errors, [e.target.name]: "" });
+        setErrors({ ...errors, [e.target.name]: '' });
     };
 
     const handleBlur = (e) => {
@@ -72,7 +72,7 @@ const ContactForm = () => {
         const hasError = Object.values(validationErrors).some(Boolean);
         if (hasError) {
             const firstErrorField = Object.keys(validationErrors).find(
-                (key) => validationErrors[key],
+                (key) => validationErrors[key]
             );
             if (firstErrorField && firstErrorRef.current) {
                 firstErrorRef.current.focus();
@@ -90,20 +90,20 @@ const ContactForm = () => {
                     from_email: formData.email,
                     message: formData.message,
                 },
-                USER_ID,
+                USER_ID
             )
             .then(() => {
-                setResult({ type: "success", message: RESULT_MESSAGES.success });
+                setResult({ type: 'success', message: RESULT_MESSAGES.success });
                 setFormData(INITIAL_FORM_DATA);
                 setIsLoading(false);
             })
             .catch((error) => {
                 setResult({
-                    type: "error",
+                    type: 'error',
                     message: RESULT_MESSAGES.error,
                 });
                 setIsLoading(false);
-                console.error("EmailJS error:", error);
+                console.error('EmailJS error:', error);
             });
     };
 
@@ -120,10 +120,14 @@ const ContactForm = () => {
                 >
                     <span>Contact Me</span>
                     <span className="ml-2 text-3xl font-bold select-none">
-                        {isOpen ? "-" : "+"}
+                        {isOpen ? '-' : '+'}
                     </span>
                 </button>
-                <div id="contact-panel" aria-labelledby="contact-toggle" className={isOpen ? "block" : "hidden"}>
+                <div
+                    id="contact-panel"
+                    aria-labelledby="contact-toggle"
+                    className={isOpen ? 'block' : 'hidden'}
+                >
                     <form
                         onSubmit={handleSubmit}
                         noValidate
@@ -139,12 +143,14 @@ const ContactForm = () => {
                                 type="text"
                                 id="name"
                                 name="name"
-                                className={`w-full px-3 py-2 border rounded focus:outline-none focus:ring bg-white dark:bg-gray-900 text-gray-900 dark:text-white ${errors.name ? "border-red-500" : "border-[#c9a6e1] dark:border-[#4b006e]"} focus:border-[#c9a6e1] dark:focus:border-[#4b006e]`}
+                                className={`w-full px-3 py-2 border rounded focus:outline-none focus:ring bg-white dark:bg-gray-900 text-gray-900 dark:text-white ${errors.name ? 'border-red-500' : 'border-[#c9a6e1] dark:border-[#4b006e]'} focus:border-[#c9a6e1] dark:focus:border-[#4b006e]`}
                                 value={formData.name}
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                                 aria-invalid={!!errors.name}
-                                aria-describedby={errors.name && touched.name ? "name-error" : undefined}
+                                aria-describedby={
+                                    errors.name && touched.name ? 'name-error' : undefined
+                                }
                                 maxLength={50}
                                 required
                                 autoComplete="off"
@@ -167,12 +173,14 @@ const ContactForm = () => {
                                 type="email"
                                 id="email"
                                 name="email"
-                                className={`w-full px-3 py-2 border rounded focus:outline-none focus:ring bg-white dark:bg-gray-900 text-gray-900 dark:text-white ${errors.email ? "border-red-500" : "border-[#c9a6e1] dark:border-[#4b006e]"} focus:border-[#c9a6e1] dark:focus:border-[#4b006e]`}
+                                className={`w-full px-3 py-2 border rounded focus:outline-none focus:ring bg-white dark:bg-gray-900 text-gray-900 dark:text-white ${errors.email ? 'border-red-500' : 'border-[#c9a6e1] dark:border-[#4b006e]'} focus:border-[#c9a6e1] dark:focus:border-[#4b006e]`}
                                 value={formData.email}
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                                 aria-invalid={!!errors.email}
-                                aria-describedby={errors.email && touched.email ? "email-error" : undefined}
+                                aria-describedby={
+                                    errors.email && touched.email ? 'email-error' : undefined
+                                }
                                 maxLength={100}
                                 required
                                 autoComplete="off"
@@ -194,12 +202,14 @@ const ContactForm = () => {
                             <textarea
                                 id="message"
                                 name="message"
-                                className={`w-full px-3 py-2 border rounded focus:outline-none focus:ring bg-white dark:bg-gray-900 text-gray-900 dark:text-white ${errors.message ? "border-red-500" : "border-[#c9a6e1] dark:border-[#4b006e]"} focus:border-[#c9a6e1] dark:focus:border-[#4b006e]`}
+                                className={`w-full px-3 py-2 border rounded focus:outline-none focus:ring bg-white dark:bg-gray-900 text-gray-900 dark:text-white ${errors.message ? 'border-red-500' : 'border-[#c9a6e1] dark:border-[#4b006e]'} focus:border-[#c9a6e1] dark:focus:border-[#4b006e]`}
                                 value={formData.message}
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                                 aria-invalid={!!errors.message}
-                                aria-describedby={errors.message && touched.message ? "message-error" : undefined}
+                                aria-describedby={
+                                    errors.message && touched.message ? 'message-error' : undefined
+                                }
                                 rows={5}
                                 maxLength={1000}
                                 required
@@ -221,13 +231,13 @@ const ContactForm = () => {
                                 className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 focus:outline-none focus:ring disabled:opacity-60 w-full sm:w-auto mt-2"
                                 disabled={isLoading || !isFormValid}
                             >
-                                {isLoading ? <Spinner size={20} /> : "Send Message"}
+                                {isLoading ? <Spinner size={20} /> : 'Send Message'}
                             </button>
                             {result && (
                                 <span
                                     id="form-result"
-                                    className={`mt-4 text-sm font-medium ${result.type === "success" ? "text-green-600" : "text-red-600"}`}
-                                    role={result.type === "success" ? "status" : "alert"}
+                                    className={`mt-4 text-sm font-medium ${result.type === 'success' ? 'text-green-600' : 'text-red-600'}`}
+                                    role={result.type === 'success' ? 'status' : 'alert'}
                                     tabIndex={-1}
                                 >
                                     {result.message}

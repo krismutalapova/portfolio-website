@@ -1,40 +1,42 @@
-import React from "react";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
-import { HiOutlineArrowDownTray } from "react-icons/hi2";
+import React from 'react';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { HiOutlineArrowDownTray } from 'react-icons/hi2';
 
 const SOCIAL_LINKS = [
     {
-        href: "https://github.com/krismutalapova",
-        label: "GitHub",
+        href: 'https://github.com/krismutalapova',
+        label: 'GitHub',
         icon: <FaGithub className="inline text-2xl group-hover:scale-110 transition-transform" />,
-        className: "hover:text-blue-600 transition group",
-        target: "_blank",
-        rel: "noopener noreferrer",
-        ariaLabel: "GitHub",
+        className: 'hover:text-blue-600 transition group',
+        target: '_blank',
+        rel: 'noopener noreferrer',
+        ariaLabel: 'GitHub',
     },
     {
-        href: "https://www.linkedin.com/in/kristina-mutalapova/",
-        label: "LinkedIn",
+        href: 'https://www.linkedin.com/in/kristina-mutalapova/',
+        label: 'LinkedIn',
         icon: <FaLinkedin className="inline text-2xl group-hover:scale-110 transition-transform" />,
-        className: "hover:text-blue-600 transition group",
-        target: "_blank",
-        rel: "noopener noreferrer",
-        ariaLabel: "LinkedIn",
+        className: 'hover:text-blue-600 transition group',
+        target: '_blank',
+        rel: 'noopener noreferrer',
+        ariaLabel: 'LinkedIn',
     },
     {
-        href: "mailto:kris.mutalapova@pm.me",
-        label: "Email",
+        href: 'mailto:kris.mutalapova@pm.me',
+        label: 'Email',
         icon: <FaEnvelope className="inline text-2xl group-hover:scale-110 transition-transform" />,
-        className: "hover:text-[#a259c6] dark:hover:text-[#4b006e] transition group",
-        ariaLabel: "Email",
+        className: 'hover:text-[#a259c6] dark:hover:text-[#4b006e] transition group',
+        ariaLabel: 'Email',
     },
     {
-        href: "/CV.pdf",
-        label: "Download CV (PDF)",
-        icon: <HiOutlineArrowDownTray className="inline text-2xl group-hover:scale-110 transition-transform" />,
-        className: "hover:text-[#a259c6] dark:hover:text-[#4b006e] transition group",
+        href: '/CV.pdf',
+        label: 'Download CV (PDF)',
+        icon: (
+            <HiOutlineArrowDownTray className="inline text-2xl group-hover:scale-110 transition-transform" />
+        ),
+        className: 'hover:text-[#a259c6] dark:hover:text-[#4b006e] transition group',
         download: true,
-        ariaLabel: "Download CV (PDF)",
+        ariaLabel: 'Download CV (PDF)',
     },
 ];
 
@@ -51,19 +53,21 @@ const Footer = React.memo(function Footer() {
                     </span>
                 </div>
                 <div className="flex gap-6 mt-2 md:mt-0 justify-center md:justify-end w-full md:w-auto">
-                    {SOCIAL_LINKS.map(({ href, label, icon, className, target, rel, ariaLabel, download }) => (
-                        <a
-                            key={label}
-                            href={href}
-                            className={className}
-                            target={target}
-                            rel={rel}
-                            aria-label={ariaLabel}
-                            download={download}
-                        >
-                            {icon}
-                        </a>
-                    ))}
+                    {SOCIAL_LINKS.map(
+                        ({ href, label, icon, className, target, rel, ariaLabel, download }) => (
+                            <a
+                                key={label}
+                                href={href}
+                                className={className}
+                                target={target}
+                                rel={rel}
+                                aria-label={ariaLabel}
+                                download={download}
+                            >
+                                {icon}
+                            </a>
+                        )
+                    )}
                 </div>
             </div>
         </footer>

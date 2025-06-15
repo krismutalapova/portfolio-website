@@ -1,4 +1,4 @@
-import profileImg from "../assets/profile.jpg";
+import profileImg from '../assets/profile.jpg';
 
 function Header() {
     return (
@@ -21,14 +21,14 @@ function Header() {
                         Full-Stack Developer
                     </p>
                     <p className="text-base md:text-lg xl:text-xl text-gray-500 dark:text-gray-400 max-w-lg mx-auto xl:mx-0 break-words">
-                        Building accessible, modern web experiences with a passion for clean
-                        code and elegant design.
+                        Building accessible, modern web experiences with a passion for clean code
+                        and elegant design.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center gap-4 mt-2 w-full">
                         <a
                             href="mailto:kris.mutalapova@pm.me"
                             className="px-8 py-2 bg-[#c9a6e1] dark:bg-[#bfa8e7] text-white rounded shadow hover:bg-[#a259c6] dark:hover:bg-[#2a003b] transition font-semibold text-base md:text-lg xl:text-xl max-w-full"
-                            style={{ wordBreak: "break-word" }}
+                            style={{ wordBreak: 'break-word' }}
                         >
                             Contact Me
                         </a>
@@ -36,7 +36,7 @@ function Header() {
                             href="/CV.pdf"
                             download
                             className="px-8 py-2 bg-gray-700 text-white rounded shadow hover:bg-[#a259c6] dark:hover:bg-[#4b006e] dark:hover:border dark:hover:border-white transition font-semibold text-base md:text-lg xl:text-xl max-w-full"
-                            style={{ wordBreak: "break-word" }}
+                            style={{ wordBreak: 'break-word' }}
                             aria-label="Download my CV as PDF"
                         >
                             Download my CV

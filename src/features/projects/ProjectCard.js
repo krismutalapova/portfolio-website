@@ -16,7 +16,7 @@ function ProjectCard({ project, expandedId, toggleDescription, techIcons }) {
                         : `Show details for ${project.title}`
                 }
                 onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
+                    if (e.key === 'Enter' || e.key === ' ') {
                         e.preventDefault();
                         toggleDescription(project.id);
                     }
@@ -28,9 +28,7 @@ function ProjectCard({ project, expandedId, toggleDescription, techIcons }) {
                     className="w-full h-48 sm:h-56 md:h-48 object-cover group-hover:brightness-75 transition"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-sm transition-opacity">
-                    {expandedId === project.id
-                        ? "Click to hide details"
-                        : "Click to view details"}
+                    {expandedId === project.id ? 'Click to hide details' : 'Click to view details'}
                 </div>
             </button>
             <div className="p-4 flex-1 flex flex-col">
@@ -56,13 +54,13 @@ function ProjectCard({ project, expandedId, toggleDescription, techIcons }) {
                         id={`project-desc-${project.id}`}
                         className="mt-2 text-gray-700 dark:text-gray-300 space-y-1 text-sm md:text-base"
                     >
-                        {project.description.split("\n").map((line, idx) => (
+                        {project.description.split('\n').map((line, idx) => (
                             <p key={idx}>{line}</p>
                         ))}
                     </div>
                 )}
                 <div className="mt-4 flex gap-2">
-                    {project.link && project.link !== "#" && (
+                    {project.link && project.link !== '#' && (
                         <a
                             href={project.link}
                             className="px-3 py-1 bg-[#a259c6] dark:bg-[#4b006e] text-white rounded hover:bg-[#b97fd8] dark:hover:bg-[#2a003b] transition text-xs md:text-sm font-medium"
