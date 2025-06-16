@@ -33,7 +33,7 @@ function Header() {
                             Contact Me
                         </a>
                         <a
-                            href="/CV.pdf"
+                            href="/Kristina_Mutalapova_Full-stack_Software_Developer_CV.pdf"
                             download
                             className="px-8 py-2 bg-gray-700 text-white rounded shadow hover:bg-[#a259c6] dark:hover:bg-[#4b006e] dark:hover:border dark:hover:border-white transition font-semibold text-base md:text-lg xl:text-xl max-w-full"
                             style={{ wordBreak: 'break-word' }}

@@ -29,7 +29,7 @@ const SOCIAL_LINKS = [
         ariaLabel: 'Email',
     },
     {
-        href: '/CV.pdf',
+        href: '/Kristina_Mutalapova_Full-stack_Software_Developer_CV.pdf',
         label: 'Download CV (PDF)',
         icon: (
             <HiOutlineArrowDownTray className="inline text-2xl group-hover:scale-110 transition-transform" />
