@@ -35,35 +35,40 @@ Welcome to my personal portfolio! This site showcases my work, skills, and proje
 
 ```
 my-portfolio/
-├── public/              # Static files (index.html, icons, etc.)
-├── src/
-│   ├── assets/          # Images for projects and profile
-│   ├── components/      # React components (Navbar, Header, AboutMe, Projects, Footer, etc.)
-│   ├── App.js           # Main app layout
-│   ├── index.js         # Entry point
-│   └── ...
-├── tailwind.config.js   # Tailwind CSS configuration
-├── postcss.config.js    # PostCSS configuration
-├── package.json         # Project metadata and scripts
-└── README.md            # This file
+├─ public/              # Static assets: index.html, icons, CV PDF
+├─ src/
+│  ├─ assets/           # Images for profile & projects
+│  ├─ features/
+│  │  ├─ about/         # AboutMe panels + data module
+│  │  ├─ projects/      # Projects grid, cards & tag filter
+│  │  └─ contact/       # Collapsible ContactForm + validation
+│  ├─ components/       # Shared UI (Navbar, ThemeToggle, Spinner…)
+│  ├─ App.js            # Routes & layout
+│  └─ index.js          # App bootstrap
+├─ tailwind.config.js   # Custom theming & animations
+├─ postcss.config.js    # Autoprefixer
+├─ .eslintrc.json       # Linting rules
+├─ .prettierrc          # Formatting rules
+└─ package.json         # Dependencies & scripts
+└── README.md           # This file
 ```
 
 ## 🧑‍💻 How to Run & Build
 
 1. **Install dependencies**:
-   ```bash
-   npm install
-   ```
+    ```bash
+    npm install
+    ```
 2. **Start the development server**:
-   ```bash
-   npm start
-   ```
-   Open [http://localhost:3000](http://localhost:3000) to view the site.
+    ```bash
+    npm start
+    ```
+    Open [http://localhost:3000](http://localhost:3000) to view the site.
 3. **Build for production**:
-   ```bash
-   npm run build
-   ```
-   The optimized build will be in the `build/` folder.
+    ```bash
+    npm run build
+    ```
+    The optimized build will be in the `build/` folder.
 
 ## ✉️ EmailJS Integration (Contact Form)
 
@@ -71,11 +76,11 @@ To enable real email delivery from the contact form, you must set up [EmailJS](h
 
 1. Create a free EmailJS account and set up an email service and template.
 2. Add the following variables to a `.env` file in your project root:
-   ```env
-   REACT_APP_EMAILJS_SERVICE_ID=your_service_id
-   REACT_APP_EMAILJS_TEMPLATE_ID=your_template_id
-   REACT_APP_EMAILJS_USER_ID=your_public_key
-   ```
+    ```env
+    REACT_APP_EMAILJS_SERVICE_ID=your_service_id
+    REACT_APP_EMAILJS_TEMPLATE_ID=your_template_id
+    REACT_APP_EMAILJS_USER_ID=your_public_key
+    ```
 3. Make sure your template uses the variables `from_name`, `from_email`, and `message` in the email body.
 4. The contact form will send emails to the address you configure in your EmailJS template.
 
